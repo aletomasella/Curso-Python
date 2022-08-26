@@ -7,11 +7,13 @@ def isWorkTime():
 
   list = current_time.split(":")
   hour = int(list[0])
+  hour = 11
 
-  if hour >= 19 or hour <= 8:
+  if hour >= 19 or hour < 9:
     print("NO ESTAMOS EN HORARIO DE TRABAJO")
   else:
-    print("ESTAMOS EN HORARIO DE TRABAJO")
+    hours_left = 19 - hour
+    print(f"ESTAMOS EN HORARIO DE TRABAJO, QUEDAN {hours_left} HORAS PARA SALIR")
 
 
 isWorkTime()
