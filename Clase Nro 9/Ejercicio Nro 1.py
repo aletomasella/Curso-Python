@@ -4,7 +4,7 @@ def getAList():
   while more:
     country = input("Enter a country: ")
     if country == "":
-      return list(set(countryList))
+      return ",".join(sorted(list(set(countryList))))
     commas = country.count(",")
     if commas > 0:
       countries = country.split(",")
@@ -15,7 +15,7 @@ def getAList():
     wantMore = input("Do you want to add more countries? (y/n): ")
     if wantMore == "n" or wantMore == "N":
       more = False
-  return list(set(countryList))
+  return ",".join(sorted(list(set(countryList))))	
 
 countryList = getAList()
 print(countryList)
